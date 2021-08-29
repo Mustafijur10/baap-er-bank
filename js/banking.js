@@ -17,19 +17,19 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 })
 
 document.getElementById('withdraw-button').addEventListener('click', function () {
-    const depositInput = document.getElementById('withdraw-input');
-    const newDepositAmount = depositInput.value;
+    const withdrawInput = document.getElementById('withdraw-input');
+    const newWithdrawAmount = withdrawInput.value;
 
-    const depositTotal = document.getElementById('withdraw-total');
-    const previousDepositAmount = depositTotal.innerText;
-    const newDepositTotal = parseFloat(previousDepositAmount) + parseFloat(newDepositAmount);
+    const withdrawTotal = document.getElementById('withdraw-total');
+    const previousWithdrawAmount = withdrawTotal.innerText;
+    const newWithdrawTotal = parseFloat(previousWithdrawAmount) + parseFloat(newWithdrawAmount);
 
-    depositTotal.innerText = Math.abs(newDepositTotal);
-    depositInput.value = '';
+    withdrawTotal.innerText = Math.abs(newWithdrawTotal);
+    withdrawInput.value = '';
 
     const balanceAmountText = document.getElementById('balance-total');
     const balanceAmount = balanceAmountText.innerText;
 
-    const newBalanceAmount = parseFloat(balanceAmount) - parseFloat(newDepositAmount);
+    const newBalanceAmount = parseFloat(balanceAmount) - parseFloat(newWithdrawAmount);
     balanceAmountText.innerText = newBalanceAmount;
 })
